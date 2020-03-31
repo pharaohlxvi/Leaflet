@@ -166,7 +166,7 @@ Bounds.prototype = {
 // @factory L.bounds(points: Point[])
 // Creates a Bounds object from the given array of points.
 export function toBounds(a, b) {
-	if (!a || a instanceof Bounds) {
+	if (!a || a instanceof Bounds || (a.min && a.max)) {
 		return a;
 	}
 	return new Bounds(a, b);
